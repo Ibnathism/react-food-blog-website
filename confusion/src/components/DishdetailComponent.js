@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
 class DishDetail extends Component {
     
@@ -12,7 +12,7 @@ class DishDetail extends Component {
                     <Card>
                         <CardImg width="100%" src={dish.image} alt={dish.name}/>
                         <CardBody>
-                            <CardTitle>{dish.name}</CardTitle>
+                            <CardTitle><h5>{dish.name}</h5></CardTitle>
                             <CardText>{dish.description}</CardText>
                         </CardBody>
                     </Card>
@@ -36,7 +36,7 @@ class DishDetail extends Component {
 
         const commentList = comments.map(i => {
             var date = new Date(i.date);
-            let formatted_date = months[date.getMonth()] +" "+ date.getDate()+","+  date.getFullYear();
+            let formatted_date = months[date.getMonth()] +" "+ date.getDate()+", "+  date.getFullYear();
             return(
 
                 <div key={i.id}>
