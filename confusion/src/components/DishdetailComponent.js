@@ -32,11 +32,8 @@ class DishDetail extends Component {
     }
 
     renderComments(comments){
-        const months = ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
+        
         const commentList = comments.map(i => {
-            var date = new Date(i.date);
-            let formatted_date = months[date.getMonth()] +" "+ date.getDate()+", "+  date.getFullYear();
             return(
 
                 <div key={i.id}>
@@ -44,7 +41,9 @@ class DishDetail extends Component {
                     <li>{i.comment}</li>
                     </ul>
                     <ul className="list-unstyled">
-                    <li>-- {i.author} , {formatted_date}</li>
+                    <li>-- {i.author} , 
+                    {new Intl.DateTimeFormat('en-US', {year: 'numeric', month: 'short', day:'2-digit'}).format(new Date(Date.parse(i.date)))}
+                    </li>
                     </ul>
                 </div>
             )
@@ -60,9 +59,10 @@ class DishDetail extends Component {
     render() {
         const dish = this.props.selectedDish;
         return(        
-            <div>
+            <div className ="container">
                 {this.renderDish(dish)}
             </div>
+            
         );
     }
 
