@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
 
+
     
     function RenderDish({dish}) {
         console.log('DishDetail render invoked');
