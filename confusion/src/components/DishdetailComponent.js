@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
-class DishDetail extends Component {
-    
 
-    renderDish(dish) {
+    
+    function RenderDish({dish}) {
+        console.log('DishDetail render invoked');
         if (dish!=null) {
             return(
                 <div className="row">
@@ -19,7 +19,7 @@ class DishDetail extends Component {
                     
                 </div>
                 <div className="col-xs-12 col-sm-12 col-md-5 m-1">
-                    {this.renderComments(dish.comments)}
+                    <RenderComments comments = {dish.comments}/>
                 </div>
                 </div>
             )
@@ -31,7 +31,7 @@ class DishDetail extends Component {
         }
     }
 
-    renderComments(comments){
+    function RenderComments({comments}){
         
         const commentList = comments.map(i => {
             return(
@@ -41,8 +41,7 @@ class DishDetail extends Component {
                     <li>{i.comment}</li>
                     </ul>
                     <ul className="list-unstyled">
-                    <li>-- {i.author} , 
-                    {new Intl.DateTimeFormat('en-US', {year: 'numeric', month: 'short', day:'2-digit'}).format(new Date(Date.parse(i.date)))}
+                    <li>-- {i.author} , {new Intl.DateTimeFormat('en-US', {year: 'numeric', month: 'short', day:'2-digit'}).format(new Date(Date.parse(i.date)))}
                     </li>
                     </ul>
                 </div>
@@ -56,16 +55,27 @@ class DishDetail extends Component {
             
         )
     }
-    render() {
-        const dish = this.props.selectedDish;
-        return(        
-            <div className ="container">
-                {this.renderDish(dish)}
-            </div>
-            
-        );
-    }
+    
+    const DishDetail = (props) => {
+        if(props.selectedDish!=null){
+            return(        
+                <div className ="container">
+                    <RenderDish dish = {props.selectedDish}/>
+                </div>
+    
+            );
+        }
+        else {
+            return(
+                <div>
 
-}
+                </div>
+            )
+        }
+        
+    }
+        
+    
+
 
 export default DishDetail;
