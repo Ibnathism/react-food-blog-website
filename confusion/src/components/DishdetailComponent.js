@@ -30,16 +30,16 @@ const minLength = (len) => (val)  => (val) && (val.length >= len);
         }
     }
 
-    function RenderComments({comments}){
+    function RenderComments({comments, addComment, dishId}){
         if(comments!=null){
-            const commentList = comments.map((i) => {
+            const commentList = comments.map((comment) => {
                 return(
                     <div>
                         <ul className="list-unstyled">
-                        <li>{i.comment}</li>
+                        <li>{comment.comment}</li>
                         </ul>
                         <ul className="list-unstyled">
-                        <li>-- {i.author} , {new Intl.DateTimeFormat('en-US', {year: 'numeric', month: 'short', day:'2-digit'}).format(new Date(Date.parse(i.date)))}
+                        <li>-- {comment.author} , {new Intl.DateTimeFormat('en-US', {year: 'numeric', month: 'short', day:'2-digit'}).format(new Date(Date.parse(comment.date)))}
                         </li>
                         </ul>
                     </div>
@@ -49,7 +49,7 @@ const minLength = (len) => (val)  => (val) && (val.length >= len);
                 <div> 
                     <h4>Comments</h4>
                     {commentList}
-                    <CommentForm/>
+                    <CommentForm dishId={dishId} addComment={addComment}/>
                 </div>
                 
             );
@@ -57,7 +57,7 @@ const minLength = (len) => (val)  => (val) && (val.length >= len);
         else{
             return (
             <div>
-                <CommentForm/>
+                <CommentForm dishId={dishId} addComment={addComment}/>
             </div>
             );
         }
@@ -81,8 +81,8 @@ const minLength = (len) => (val)  => (val) && (val.length >= len);
             });
         }
         handleSubmit(values) {
-            console.log("Current State is:  "+ JSON.stringify(values));
-            alert("Current State is: " + JSON.stringify(values));
+            this.toggleModal();
+            this.props.addComment(this.props.dishId, values.select, values.username, values.message);
         }
         
         render() {
@@ -165,7 +165,9 @@ const minLength = (len) => (val)  => (val) && (val.length >= len);
                             <RenderDish dish = {props.dish}/>
                         </div>
                         <div className="col-xs-12 col-sm-12 col-md-5 m-1">
-                            <RenderComments comments = {props.comments} />
+                            <RenderComments comments = {props.comments}
+                            addComment = {props.addComment}
+                            dishId = { props.dish.id}/>
                             
                         </div>
                     </div>
