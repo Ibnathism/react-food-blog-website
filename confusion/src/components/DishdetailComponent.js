@@ -33,7 +33,7 @@ const minLength = (len) => (val)  => (val) && (val.length >= len);
         }
     }
 
-    function RenderComments({comments, addComment, dishId}){
+    function RenderComments({comments, postComment, dishId}){
         if(comments!=null){
             const commentList = comments.map((comment) => {
                 return(
@@ -52,7 +52,7 @@ const minLength = (len) => (val)  => (val) && (val.length >= len);
                 <div> 
                     <h4>Comments</h4>
                     {commentList}
-                    <CommentForm dishId={dishId} addComment={addComment}/>
+                    <CommentForm dishId={dishId} postComment={postComment}/>
                 </div>
                 
             );
@@ -60,7 +60,7 @@ const minLength = (len) => (val)  => (val) && (val.length >= len);
         else{
             return (
             <div>
-                <CommentForm dishId={dishId} addComment={addComment}/>
+                <CommentForm dishId={dishId} postComment={postComment}/>
             </div>
             );
         }
@@ -85,7 +85,7 @@ const minLength = (len) => (val)  => (val) && (val.length >= len);
         }
         handleSubmit(values) {
             this.toggleModal();
-            this.props.addComment(this.props.dishId, values.select, values.username, values.message);
+            this.props.postComment(this.props.dishId, values.rating, values.author, values.comment);
         }
         
         render() {
@@ -100,8 +100,8 @@ const minLength = (len) => (val)  => (val) && (val.length >= len);
                         <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
                             <div className="container">
                             <Row className="form-group">
-                                <Label for = "select">Rating</Label>
-                                <Control.select model = ".select" name = "select"
+                                <Label for = "rating">Rating</Label>
+                                <Control.select model = ".rating" name = "rating"
                                     className = "form-control">
                                         <option>1</option>
                                         <option>2</option>
@@ -111,8 +111,8 @@ const minLength = (len) => (val)  => (val) && (val.length >= len);
                                 </Control.select>
                             </Row>
                             <Row className="form-group">
-                                <Label for = "username">Your Name</Label>
-                                <Control.text model=".username" id="username" name="username"
+                                <Label for = "author">Your Name</Label>
+                                <Control.text model=".author" id="author" name="author"
                                 placeholder="Your Name"
                                 className="form-control"
                                 validators={{
@@ -120,7 +120,7 @@ const minLength = (len) => (val)  => (val) && (val.length >= len);
                                 }}/>
                                 <Errors
                                     className = "text-danger"
-                                    model = ".username"
+                                    model = ".author"
                                     show = "touched"
                                     messages = {{
                                         required: 'Required',
@@ -129,8 +129,8 @@ const minLength = (len) => (val)  => (val) && (val.length >= len);
                                     }}/>
                             </Row>
                             <Row className="form-group">
-                                <Label for = "message">Comment</Label>
-                                <Control.textarea model =".message" id = "message" name = "message"
+                                <Label for = "comment">Comment</Label>
+                                <Control.textarea model =".comment" id = "comment" name = "comment"
                                 row = "6"
                                 className = "form-control"/>
                             </Row>
@@ -187,7 +187,7 @@ const minLength = (len) => (val)  => (val) && (val.length >= len);
                         </div>
                         <div className="col-xs-12 col-sm-12 col-md-5 m-1">
                             <RenderComments comments = {props.comments}
-                            addComment = {props.addComment}
+                            postComment = {props.postComment}
                             dishId = { props.dish.id}/>
                             
                         </div>
