@@ -18,8 +18,8 @@ const minLength = (len) => (val)  => (val) && (val.length >= len);
         if (dish!=null) {
             return(
                 <FadeTransform in
-                transdormProps={{
-                    exitTransform: 'scale(0.5) translateY(-50%'
+                transformProps={{
+                    exitTransform: 'scale(0.5) translateY(-50%)'
                 }}>
                     <Card>
                         <CardImg width="100%" src={baseUrl + dish.image} alt={dish.name}/>
