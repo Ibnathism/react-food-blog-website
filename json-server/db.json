@@ -2,43 +2,143 @@
   "dishes": [
     {
       "id": 0,
-      "name": "Uthappizza",
-      "image": "images/uthappizza.png",
-      "category": "mains",
+      "name": "Pudding Cake",
+      "image": "images/puddingcake.jpeg",
+      "category": "dessert",
       "label": "Hot",
       "price": "4.99",
       "featured": true,
-      "description": "A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer."
+      "description": "Delicious pudding layer over yummy chocolate cake layer can be your best dessert"
     },
     {
       "id": 1,
-      "name": "Zucchipakoda",
-      "image": "images/zucchipakoda.png",
+      "name": "Potato Wedges",
+      "image": "images/potatowedges.png",
       "category": "appetizer",
       "label": "",
       "price": "1.99",
       "featured": false,
-      "description": "Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce"
+      "description": "Deep fried wedges coated with mildly spiced flour batter accompanied with a sweet-tangy tamarind sauce"
     },
     {
       "id": 2,
-      "name": "Vadonut",
-      "image": "images/vadonut.png",
-      "category": "appetizer",
+      "name": "Kala Jamun",
+      "image": "images/kalajamun.jpg",
+      "category": "dessert",
       "label": "New",
       "price": "1.99",
       "featured": false,
-      "description": "A quintessential ConFusion experience, is it a vada or is it a donut?"
+      "description": "Sweetness at it's best and very easy to make"
     },
     {
       "id": 3,
-      "name": "ElaiCheese Cake",
-      "image": "images/elaicheesecake.png",
+      "name": "Arabian Kunafa",
+      "image": "images/arabiankunafa.jpg",
       "category": "dessert",
       "label": "",
       "price": "2.99",
       "featured": false,
-      "description": "A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms"
+      "description": "A delectable, semi-sweet Arabian style kunafa, with Semai crust and custard layer"
+    },
+    {
+      "id": 4,
+      "name": "Beef Pizza",
+      "image": "images/beefpizza.jpg",
+      "category": "appetizer",
+      "label": "",
+      "price": "2.99",
+      "featured": false,
+      "description": "Italian style oven baked beef pizza with mozarella cheese and special pizza sauce"
+    },
+    {
+      "id": 5,
+      "name": "Veg Pakora",
+      "image": "images/pakora.jpeg",
+      "category": "appetizer",
+      "label": "",
+      "price": "2.99",
+      "featured": false,
+      "description": "Crunchy vegetable pakoras, sweet and sour sauce will increase its's taste"
+    },
+    {
+      "id": 6,
+      "name": "Cloud Omlete",
+      "image": "images/cloudomlete.jpeg",
+      "category": "appetizer",
+      "label": "",
+      "price": "2.99",
+      "featured": false,
+      "description": "If you are bored with your everyday boiled or fried egg, then this one is for you"
+    },
+    {
+      "id": 7,
+      "name": "Chicken Fry",
+      "image": "images/chickenfry.jpeg",
+      "category": "appetizer",
+      "label": "",
+      "price": "2.99",
+      "featured": false,
+      "description": "Crispy chicken fries served with potato wedges"
+    },
+    {
+      "id": 8,
+      "name": "Chicken Veg Soup",
+      "image": "images/chickenvegsoup.jpeg",
+      "category": "appetizer",
+      "label": "",
+      "price": "2.99",
+      "featured": false,
+      "description": "Hot and tasty soup is best deal for winter"
+    },
+    {
+      "id": 9,
+      "name": "Dalgona Coffee",
+      "image": "images/dalgonacoffee.jpeg",
+      "category": "drink",
+      "label": "",
+      "price": "2.99",
+      "featured": false,
+      "description": "Special Dalgona Coffee, easy to make and best stree reliever"
+    },
+    {
+      "id": 10,
+      "name": "Garlic Potato",
+      "image": "images/garlicpotato.jpeg",
+      "category": "appetizer",
+      "label": "",
+      "price": "2.99",
+      "featured": false,
+      "description": "Crispy potato with garlic coating"
+    },
+    {
+      "id": 11,
+      "name": "Pan Pasta",
+      "image": "images/panpasta.jpeg",
+      "category": "appetizer",
+      "label": "",
+      "price": "2.99",
+      "featured": false,
+      "description": "Italian style chicken pan pasta made using special sauce"
+    },
+    {
+      "id": 12,
+      "name": "Jilapi",
+      "image": "images/jilapi.jpeg",
+      "category": "appetizer",
+      "label": "",
+      "price": "2.99",
+      "featured": false,
+      "description": "Homemade bakery style perfect shaped jilapi will complete your iftaar"
+    },
+    {
+      "id": 13,
+      "name": "Halwa",
+      "image": "images/halwa.jpg",
+      "category": "dessert",
+      "label": "",
+      "price": "2.99",
+      "featured": false,
+      "description": "Sweet and yummy halwa"
     }
   ],
   "comments": [
@@ -217,24 +317,32 @@
       "comment": "This is a test comment",
       "date": "2020-05-18T06:46:53.134Z",
       "id": 23
+    },
+    {
+      "dishId": 4,
+      "rating": "5",
+      "author": "Muntaka",
+      "comment": "Best Homemaded Pizza ever!!!",
+      "date": "2020-05-19T16:06:03.519Z",
+      "id": 24
     }
   ],
   "promotions": [
     {
       "id": 0,
-      "name": "Weekend Grand Buffet",
-      "image": "images/buffet.png",
+      "name": "Weekend Special Menu",
+      "image": "images/specialoffer.jpeg",
       "label": "New",
       "price": "19.99",
       "featured": true,
-      "description": "Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person "
+      "description": "Featuring mouthwatering combinations with a choice of chinese vegetable, fried chicken, beef sizzling and veg fried rice."
     }
   ],
   "leaders": [
     {
       "id": 0,
       "name": "Peter Pan",
-      "image": "images/alberto.png",
+      "image": "images/alberto.jpg",
       "designation": "Chief Epicurious Officer",
       "abbr": "CEO",
       "featured": false,
@@ -243,7 +351,7 @@
     {
       "id": 1,
       "name": "Dhanasekaran Witherspoon",
-      "image": "images/alberto.png",
+      "image": "images/alberto.jpg",
       "designation": "Chief Food Officer",
       "abbr": "CFO",
       "featured": false,
@@ -252,7 +360,7 @@
     {
       "id": 2,
       "name": "Agumbe Tang",
-      "image": "images/alberto.png",
+      "image": "images/alberto.jpg",
       "designation": "Chief Taste Officer",
       "abbr": "CTO",
       "featured": false,
@@ -261,7 +369,7 @@
     {
       "id": 3,
       "name": "Alberto Somayya",
-      "image": "images/alberto.png",
+      "image": "images/alberto.jpg",
       "designation": "Executive Chef",
       "abbr": "EC",
       "featured": true,
