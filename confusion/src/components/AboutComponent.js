@@ -100,7 +100,7 @@ function About(props) {
                     <h2>Corporate Leadership</h2>
                     <br/>
                 </div>
-                <div className="col-12">
+                <div className="col-12 col-md m-1">
                     <Media list>
                         <Stagger in>
                             {props.leaders.leaders.map((leader) => {
