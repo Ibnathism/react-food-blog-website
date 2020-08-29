@@ -19,7 +19,8 @@ export const postComment = (dishId, rating, author, comment) => (dispatch) => {
         method: 'POST',
         body: JSON.stringify(newComment),
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
         },
         credentials: 'same-origin'
     })
@@ -209,7 +210,8 @@ export const postFeedback = (firstname, lastname, telnum, email, agree, contactT
         method: 'POST',
         body: JSON.stringify(newFeedback),
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
         },
         credentials: 'same-origin'
     })
